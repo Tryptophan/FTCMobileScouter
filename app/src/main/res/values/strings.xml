@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">FTC Mobile Scouter</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_field">New Field Scout</string>
+    <string name="title_activity_field_load">Edit Field Scout</string>
+    <string name="title_activity_pit">New Pit Scout</string>
+    <string name="title_activity_pit_load">Edit Pit Scout</string>
+
+</resources>
