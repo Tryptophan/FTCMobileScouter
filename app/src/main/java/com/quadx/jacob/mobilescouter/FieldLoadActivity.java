@@ -1,6 +1,5 @@
-package com.example.jacob.mobilescouter;
+package com.quadx.jacob.mobilescouter;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;

@@ -1,4 +1,4 @@
-package com.example.jacob.mobilescouter;
+package com.quadx.jacob.mobilescouter;
 
 import java.util.ArrayList;
 

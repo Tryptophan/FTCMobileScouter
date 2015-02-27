@@ -1,4 +1,4 @@
-package com.example.jacob.mobilescouter;
+package com.quadx.jacob.mobilescouter;
 
 import android.content.Intent;
 import android.os.Environment;
@@ -16,42 +16,49 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 
-public class PitActivity extends ActionBarActivity {
+public class FieldActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pit);
+        setContentView(R.layout.activity_field);
 
-        Button saveButton = (Button)findViewById(R.id.pitSaveButton);
+        Button saveButton = (Button)findViewById(R.id.fieldSaveButton);
 
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                final String teamNumber = ((EditText) findViewById(R.id.teamNumber)).getText().toString();
-                final String autoScore = ((EditText) findViewById(R.id.autoScore)).getText().toString();
-                final String teleopScore = ((EditText) findViewById(R.id.teleopScore)).getText().toString();
-                final String autoNotes = ((EditText) findViewById(R.id.autoNotes)).getText().toString();
-                final String teleopNotes = ((EditText) findViewById(R.id.teleopNotes)).getText().toString();
-                final String avgScore = ((EditText) findViewById(R.id.avgScore)).getText().toString();
+                final String matchNumber = ((EditText)findViewById(R.id.matchNumber)).getText().toString();
+                final String division = ((EditText)findViewById(R.id.division)).getText().toString();
+                final String red1Number = ((EditText)findViewById(R.id.red1Number)).getText().toString();
+                final String red2Number = ((EditText)findViewById(R.id.red2Number)).getText().toString();
+                final String blue1Number = ((EditText)findViewById(R.id.blue1Number)).getText().toString();
+                final String blue2Number = ((EditText)findViewById(R.id.blue2Number)).getText().toString();
+                final String redScore = ((EditText)findViewById(R.id.redScore)).getText().toString();
+                final String blueScore = ((EditText)findViewById(R.id.blueScore)).getText().toString();
+                final String redNotes = ((EditText)findViewById(R.id.redNotes)).getText().toString();
+                final String blueNotes = ((EditText)findViewById(R.id.blueNotes)).getText().toString();
 
-                Pit pitScout = new Pit(teamNumber, autoScore, teleopScore, autoNotes, teleopNotes, avgScore);
+                Field fieldScout = new Field(matchNumber, division, red1Number, red2Number, blue1Number, blue2Number, redScore, blueScore, redNotes, blueNotes);
                 File directory = new File(Environment.getExternalStorageDirectory() + "/ftcMobileScouter/");
 
-                if (pitScout.containsEmptyString()) {
+                if (fieldScout.containsEmptyString()) {
                     Toast toast = Toast.makeText(view.getContext(), "Please fill in all fields before saving.", Toast.LENGTH_LONG);
                     toast.show();
-                } else {
+                }
+
+                else {
                     if (!directory.exists()) {
                         directory.mkdir();
                     }
 
-                    File file = new File(directory, pitScout.toString());
+                    File file = new File(directory, fieldScout.toString());
 
                     try {
                         FileOutputStream fos = new FileOutputStream(file);
-                        fos.write(pitScout.writeFile().getBytes());
+                        fos.write(fieldScout.writeFile().getBytes());
+                        fos.write(fieldScout.writeExtras().getBytes());
                         fos.close();
 
                         Toast toast = Toast.makeText(view.getContext(), "Scout successfully saved!", Toast.LENGTH_LONG);
@@ -68,10 +75,11 @@ public class PitActivity extends ActionBarActivity {
         });
     }
 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_pit, menu);
+        getMenuInflater().inflate(R.menu.menu_field, menu);
         return true;
     }
 

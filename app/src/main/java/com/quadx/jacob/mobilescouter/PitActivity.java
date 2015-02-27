@@ -1,4 +1,4 @@
-package com.example.jacob.mobilescouter;
+package com.quadx.jacob.mobilescouter;
 
 import android.content.Intent;
 import android.os.Environment;
@@ -14,38 +14,16 @@ import android.widget.Toast;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Scanner;
 
 
-public class PitLoadActivity extends ActionBarActivity {
+public class PitActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pit_load);
+        setContentView(R.layout.activity_pit);
 
-        Bundle bundle = getIntent().getExtras();
         Button saveButton = (Button)findViewById(R.id.pitSaveButton);
-
-        String data = bundle.getString("data");
-
-        Scanner dataScanner = new Scanner(data);
-        dataScanner.useDelimiter("/");
-        ArrayList<EditText> editTexts = new ArrayList<>();
-
-        editTexts.add((EditText)findViewById(R.id.teamNumber));
-        editTexts.add((EditText)findViewById(R.id.autoScore));
-        editTexts.add((EditText)findViewById(R.id.teleopScore));
-        editTexts.add((EditText)findViewById(R.id.autoNotes));
-        editTexts.add((EditText)findViewById(R.id.teleopNotes));
-        editTexts.add((EditText)findViewById(R.id.avgScore));
-
-        for (int i = 0; i < editTexts.size(); i++) {
-            editTexts.get(i).setText(dataScanner.next());
-        }
-
-        dataScanner.close();
 
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,4 +1,4 @@
-package com.example.jacob.mobilescouter;
+package com.quadx.jacob.mobilescouter;
 
 /**
  * Created by greenway_881124 on 2/13/2015.
