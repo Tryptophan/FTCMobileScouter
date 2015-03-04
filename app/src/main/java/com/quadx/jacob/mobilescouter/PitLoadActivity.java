@@ -31,7 +31,7 @@ public class PitLoadActivity extends ActionBarActivity {
         String data = bundle.getString("data");
 
         Scanner dataScanner = new Scanner(data);
-        dataScanner.useDelimiter("/");
+        dataScanner.useDelimiter("\\|");
         ArrayList<EditText> editTexts = new ArrayList<>();
 
         editTexts.add((EditText)findViewById(R.id.teamNumber));

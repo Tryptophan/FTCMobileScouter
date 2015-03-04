@@ -5,6 +5,7 @@ import java.util.ArrayList;
 /**
  * Created by greenway_881124 on 2/13/2015.
  */
+
 public class Field extends Scout {
     private String fileName;
     private String roundNum;
@@ -17,20 +18,6 @@ public class Field extends Scout {
     private String redTeamScore;
     private String blueTeamNotes;
     private String redTeamNotes;
-
-    public Field() {
-        fileName = "";
-        roundNum = "";
-        division = "";
-        blueTeam1 = "";
-        blueTeam2 = "";
-        redTeam1 = "";
-        redTeam2 = "";
-        blueTeamScore = "";
-        redTeamScore = "";
-        blueTeamNotes = "";
-        redTeamNotes = "";
-    }
 
     public boolean containsEmptyString() {
         boolean containsEmptyString = false;

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 /**
  * Created by greenway_881124 on 2/13/2015.
  */
+
 public class Pit extends Scout {
     private String fileName;
     private String teamNumber;
@@ -13,16 +14,6 @@ public class Pit extends Scout {
     private String autoNotes;
     private String teleopNotes;
     private String avgScore;
-
-    public Pit() {
-        fileName = "new Pit";
-        teamNumber = "";
-        autoScore = "";
-        teleopScore = "";
-        autoNotes = "";
-        teleopNotes = "";
-        avgScore = "";
-    }
 
     public Pit(String tNum, String aScore, String tScore, String aNotes, String tNotes, String avg) {
         fileName = "Team_" + tNum;
@@ -55,7 +46,7 @@ public class Pit extends Scout {
     }
 
     public String writeFile() {
-        return teamNumber + "/" + autoScore + "/" + teleopScore + "/" + autoNotes + "/" + teleopNotes + "/" + avgScore;
+        return teamNumber + "|" + autoScore + "|" + teleopScore + "|" + autoNotes + "|" + teleopNotes + "|" + avgScore;
     }
 
     @Override
