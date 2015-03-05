@@ -66,11 +66,11 @@ public class MainActivity extends ActionBarActivity {
         fieldSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> arg0, View view, int position, long id) {
                 if (position == 0) {
-                    ArrayAdapter<String> newArrayAdapter = new ArrayAdapter<>(view.getContext(), android.R.layout.simple_list_item_1, initList("field", "matchNumber"));
+                    ArrayAdapter<String> newArrayAdapter = new ArrayAdapter<>(getBaseContext(), android.R.layout.simple_list_item_1, initList("field", "matchNumber"));
                     fieldListView.setAdapter(newArrayAdapter);
                 }
                 else if (position == 1) {
-                    ArrayAdapter<String> newArrayAdapter = new ArrayAdapter<>(view.getContext(), android.R.layout.simple_list_item_1, initList("field", "matchScore"));
+                    ArrayAdapter<String> newArrayAdapter = new ArrayAdapter<>(getBaseContext(), android.R.layout.simple_list_item_1, initList("field", "matchScore"));
                     fieldListView.setAdapter(newArrayAdapter);
                 }
             }
@@ -80,15 +80,15 @@ public class MainActivity extends ActionBarActivity {
         pitSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> arg0, View view, int position, long id) {
                 if (position == 0) {
-                    ArrayAdapter<String> newArrayAdapter = new ArrayAdapter<>(view.getContext(), android.R.layout.simple_list_item_1, initList("pit", "teamNumber"));
+                    ArrayAdapter<String> newArrayAdapter = new ArrayAdapter<>(getBaseContext(), android.R.layout.simple_list_item_1, initList("pit", "teamNumber"));
                     pitListView.setAdapter(newArrayAdapter);
                 }
                 else if (position == 1) {
-                    ArrayAdapter<String> newArrayAdapter = new ArrayAdapter<>(view.getContext(), android.R.layout.simple_list_item_1, initList("pit", "autoScore"));
+                    ArrayAdapter<String> newArrayAdapter = new ArrayAdapter<>(getBaseContext(), android.R.layout.simple_list_item_1, initList("pit", "autoScore"));
                     pitListView.setAdapter(newArrayAdapter);
                 }
                 else if (position == 2) {
-                    ArrayAdapter<String> newArrayAdapter = new ArrayAdapter<>(view.getContext(), android.R.layout.simple_list_item_1, initList("pit", "teleopScore"));
+                    ArrayAdapter<String> newArrayAdapter = new ArrayAdapter<>(getBaseContext(), android.R.layout.simple_list_item_1, initList("pit", "teleopScore"));
                     pitListView.setAdapter(newArrayAdapter);
                 }
             }
